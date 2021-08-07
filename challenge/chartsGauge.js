@@ -77,16 +77,13 @@ d3.json("samples.json").then((data) => {
     // 3. Create a variable that holds the washing frequency.
     //var washing = parseFloat(result.wfreq);
     //console.log(washing)
-
-    // Create the yticks for the bar chart.
-    var yticks = otu_ids.slice(0,10).map(id => `OTU ${id}`).reverse();
   
     //4. Create the trace for the gauge chart.
     var gaugeData = [{
         domain: { x: [0, 1], y: [0, 1] },
         //value: washing,
         type: "indicator",
-        mode: "gauge+number",
+        mode: "gauge+number", 
         gauge: {
           axis: {range : [null,10],tickwidth:1},
           steps: [
