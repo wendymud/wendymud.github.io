@@ -75,7 +75,7 @@ d3.json("samples.json").then((data) => {
     console.log(otu_values);
 
     // 3. Create a variable that holds the washing frequency.
-    //var washing = parseFloat(result.wfreq);
+    var washing = parseFloat(result.wfreq);
     //console.log(washing)
   
     //4. Create the trace for the gauge chart.
