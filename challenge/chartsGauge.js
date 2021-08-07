@@ -35,6 +35,7 @@ function buildMetadata(sample) {
     // Filter the data for the object with the desired sample number
     var resultArray = metadata.filter(sampleObj => sampleObj.id == sample);
     var result = resultArray[0];
+
     // Use d3 to select the panel with id of `#sample-metadata`
     var PANEL = d3.select("#sample-metadata");
 
@@ -55,35 +56,35 @@ function buildMetadata(sample) {
 function buildCharts(sample) {
 // 2. Use d3.json to load and retrieve the samples.json file 
 d3.json("samples.json").then((data) => {
-    console.log(data);
+
     // 3. Create a variable that holds the samples array. 
     var samples = data.samples;
     // 4. Create a variable that filters the samples for the object with the desired sample number.
-    var filteredSamples = samples.filter(sampleObj => sampleObj.id === sample);
-    console.log(filteredSamples);
+    var filteredSamples = samples.filter(sampleObj => sampleObj.id == sample);
+  
     //  5. Create a variable that holds the first sample in the array.
     var result1 = filteredSamples[0];
-
+    console.log(result1)
+    
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
     var otu_ids = result1.otu_ids;
     var otu_labels = result1.otu_labels;
     var otu_values = result1.sample_values;
     console.log(otu_ids);
     console.log(otu_labels);
-    console.log(otu_values)
+    console.log(otu_values);
 
     // 3. Create a variable that holds the washing frequency.
-    var convert = parseFloat(result1.wfreq);
-    console.log(convert)
+    //var washing = parseFloat(result.wfreq);
+    //console.log(washing)
 
     // Create the yticks for the bar chart.
     var yticks = otu_ids.slice(0,10).map(id => `OTU ${id}`).reverse();
   
     //4. Create the trace for the gauge chart.
-    var gaugeData = [
-      {
+    var gaugeData = [{
         domain: { x: [0, 1], y: [0, 1] },
-        value: convert,
+        //value: washing,
         type: "indicator",
         mode: "gauge+number",
         gauge: {
@@ -99,14 +100,13 @@ d3.json("samples.json").then((data) => {
         "titlefont": {
           "size": 28,
         },
-      }
-      ];
+      }];
   
     // 5. Create the layout for the gauge chart.
     var gaugeLayout = { width: 600, height: 500, margin: { t: 0, b: 0 } 
-  };
+    };
 
     // 6. Use Plotly to plot the gauge data and layout.
     Plotly.newPlot("gauge", gaugeData, gaugeLayout)
-  });
-}
+    });
+  }
