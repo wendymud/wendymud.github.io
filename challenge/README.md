@@ -7,12 +7,12 @@ The request for this challenge involved creating engaging online data visualizat
 2. Create a Bubble Chart displaying Bacteria Cultures per sample when the Test Subjects are selected from the dropdown
 3. Create a Gauge Chart that displays the weekly washing frequency per Test Subject, again displaying each from the dropdown
 
-![Figure1.PNG](/img/Figure1.PNG)
+![Figure1.PNG](./img/Figure1.PNG)
 #### Figure1
 
 As you select the Test Subjects in the dropdown, in Figure2, you'll also be able to see the Belly Button Washing Frequency on a gauge chart.  This depicts the scrubs per week for each subject.  It's interesting to see the correlation of washing frequency to the amount of OTUs and Bacteria Cultures per sample.
 
-![Figure2.PNG](/img/Figure2.PNG)
+![Figure2.PNG](./img/Figure2.PNG)
 #### Figure2
 
 The changes will also be immediately revealed in the other two charts, the OTU Chart and the Bacteria Cultures Per Sample.
